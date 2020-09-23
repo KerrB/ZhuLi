@@ -1,0 +1,22 @@
+{
+  "name": "discordbot",
+  "version": "1.0.0",
+  "description": "Talking bot",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KerrB/ZhuLi.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KerrB/ZhuLi/issues"
+  },
+  "homepage": "https://github.com/KerrB/ZhuLi#readme",
+  "dependencies": {
+    "discord.js": "^12.3.1"
+  }
+}
