@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 
-const config = require('./config.json');
+const { prefix, token } = require('./config.json');
 
 const client = new Discord.Client();
 
@@ -14,10 +14,14 @@ client.once('ready', () => {
 //TODO: Figure out how to run functions outside of main. Do we just reference them?
 client.on('message', message => {
 
-    if(message.content == '!ping')
+    //TODO: We are currently on ES5, figure out how to switch to ES6
+    if(message.content === prefix + 'ping')
     {
+        console.log(message.content);
         message.channel.send('STFU');
     }
+
+    
 
 });
 
@@ -25,5 +29,8 @@ client.on('message', message => {
 
 
 
+
+
+
 //this has to be the end
-client.login(config.token);
+client.login(token);
