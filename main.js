@@ -20,6 +20,8 @@ client.once('ready', () => {
 });
 
 
+
+
 client.on('message', message => {
 	if (!message.content.startsWith(prefix) || message.author.bot) return;
 
@@ -27,6 +29,8 @@ client.on('message', message => {
 	const command = args.shift().toLowerCase();
 
 	if (!client.commands.has(command)) return;
+
+
 
 	try {
 		client.commands.get(command).execute(message, args);
