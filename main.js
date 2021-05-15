@@ -15,6 +15,8 @@ for (const file of commandFiles) {
 	client.commands.set(command.name, command);
 }
 
+const ZhuLiAnger = require("./commands/anger.js")
+
 client.once('ready', () => {
     console.log('Zhu Li is on!');
 });
@@ -23,10 +25,22 @@ client.once('ready', () => {
 
 
 client.on('message', message => {
+	
+	let English = (/([a-z]|[A-Z])+/)
+	if(message.channel.name == 'korean-only' && English.test(message.content) && !message.member.user.bot){
+			ZhuLiAnger.No_English(message, message.member.user);
+			
+	}
+
+
+
+
+	//Checks for ZhuLi commands
 	if (!message.content.startsWith(prefix) || message.author.bot) return;
 
 	const args = message.content.slice(prefix.length).trim().split(/ +/);
 	const command = args.shift().toLowerCase();
+
 
 	if (!client.commands.has(command)) return;
 
